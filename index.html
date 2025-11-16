@@ -1,1 +1,114 @@
-Hello world
+<!DOCTYPE HTML>
+<html lang="en">
+   <head>
+       <title>Page title shown in window title</title>
+       <meta charset="utf-8"/>
+   </head>
+   <body>
+    <header>
+        <h1>Välkommen till BurgerOnline</h1>
+    </header>
+    <section>
+        <h2>Våra burgare</h2>
+        <div>
+            Välj din burgare
+        </div>
+        <div>
+            <div style="display: inline-block; margin: 50px;">  
+            <h3>Brandburgaren</h3>
+                <img src="/public/img/Brandburgare.jpg" alt="Brandburgaren" style="width: 200px" style="height: 200px">
+                <ul>
+                    <li>100% nötkött</li>
+                    <li>Extra stark</li>
+                    <li>Innehåller gluten</li>
+                </ul>
+            </div>
+            <div style="display: inline-block">  
+                <h3>Donkenburgaren</h3>
+                <img src="/public/img/donken.jpg" alt="donkenburgaren" style="width: 200px" style="height: 200px">
+                <ul>
+                    <li>70% nötkött</li>
+                    <li>Smaklös</li>
+                    <li>Glutenfri</li>
+                </ul>
+            </div>
+            <div style="display: inline-block">  
+                <h3>Grukburgaren</h3>
+                <img src="/public/img/gurkburgaren.jpg" alt="Gurkburgaren" style="width: 200px" style="height: 200px">
+                <ul>
+                    <li>100% nötkött</li>
+                    <li>GURKA</li>
+                    <li>Innehåller gluten</li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+    <section>
+        <h2>Kundinformation</h2>
+        <div>
+            Fyll i dina uppgifter
+        </div>   
+    </section>
+    <section id ="kontakt">
+        <h2>Beställningsinformation</h2>
+        <form>
+            <p>
+                <label for="name">Namn:</label><br>
+                <input type="text" id="namn" name="fn" required="required" placeholder="För- och efternamn">
+            </p>
+            <p>
+                <label for="email">E-mail:</label><br>
+                <input type="email" id="email" required="required" placeholder="E-postadress">
+            </p>
+            <p>
+                <label for="gata">Gata:</label><br>
+                <input type="text" inputmode="numeric" id="gata" required="required" placeholder="Gatnamn">
+            </p>
+            <p>
+                <label for="gatnummer">Gatnummer:</label><br>
+                <input type="number" id="gatnummer" required="required" placeholder="Gatnummer">
+            </p>
+        </form>
+        <form>
+            <p>
+                <label for="betalbetod">Betalmetod</label><be>
+                    <select id="betalbetod" name="rcp">
+                        <option selected="selected">Kort</option>
+                        <option>Faktura</option>
+                        <option>Kontant</option>
+                        <option>Inte alls</option>
+                    </select>
+                </p>
+            </form>
+        <div>
+            Kön
+        </div>
+        <form>
+            <p> 
+                <input type="radio" id="man" name="gender">
+                <label for="man">Man</label>
+            </p>
+            <p>
+                <input type="radio" id="kvinna" name="gender">
+                <label for="kvinna">Kvinna</label>
+            </p>
+            <p>
+                <input type="radio" id="icke-binär" name="gender">
+                <label for="icke-binär">Icke-binär</label>
+            </p>
+            <p>
+                <input type="radio" id="anant" name="gender" checked="checked">
+                <label for="annat">Annat</label>
+            </p>
+        </form>
+    </section>
+    <button type="submit">
+        <img src="/public/img/cykel.jpg" style="width: 30px">
+    Skicka order
+    </button>
+    <footer>
+        <p>Copyright © 2025 BurgerOnline</p>
+    </footer>
+   </body>
+</html>
