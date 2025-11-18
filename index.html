@@ -3,39 +3,40 @@
    <head>
        <title>Page title shown in window title</title>
        <meta charset="utf-8"/>
+       <link rel="stylesheet" type="text/css" href="/public/css/style.css">
    </head>
    <body>
     <header>
         <h1>Välkommen till BurgerOnline</h1>
     </header>
-    <section>
+    <section id="burgarinformation">
         <h2>Våra burgare</h2>
-        <div>
+        <h3>
             Välj din burgare
-        </div>
-        <div>
-            <div style="display: inline-block; margin: 50px;">  
+        </h3>
+        <div class="wrapper">
+            <div class="box a">  
             <h3>Brandburgaren</h3>
                 <img src="/public/img/Brandburgare.jpg" alt="Brandburgaren" style="width: 200px" style="height: 200px">
-                <ul>
+                <ul class="ingredients">
                     <li>100% nötkött</li>
                     <li>Extra stark</li>
                     <li>Innehåller gluten</li>
                 </ul>
             </div>
-            <div style="display: inline-block">  
+            <div class="box b">  
                 <h3>Donkenburgaren</h3>
                 <img src="/public/img/donken.jpg" alt="donkenburgaren" style="width: 200px" style="height: 200px">
-                <ul>
+                <ul class="ingredients">
                     <li>70% nötkött</li>
                     <li>Smaklös</li>
                     <li>Glutenfri</li>
                 </ul>
             </div>
-            <div style="display: inline-block">  
+            <div class="box c">  
                 <h3>Grukburgaren</h3>
                 <img src="/public/img/gurkburgaren.jpg" alt="Gurkburgaren" style="width: 200px" style="height: 200px">
-                <ul>
+                <ul class="ingredients">
                     <li>100% nötkött</li>
                     <li>GURKA</li>
                     <li>Innehåller gluten</li>
@@ -44,13 +45,11 @@
         </div>
 
     </section>
-    <section>
+    <section id="kontakt">
         <h2>Kundinformation</h2>
         <div>
-            Fyll i dina uppgifter
+            Fyll i dina preferenser
         </div>   
-    </section>
-    <section id ="kontakt">
         <h2>Beställningsinformation</h2>
         <form>
             <p>

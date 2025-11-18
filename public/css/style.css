@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Cormorant:wght@700&display=swap');
 body {
     font-size: 12pt;
+    font-family: 'Times New Roman', Times, serif;
+    color: brown;
 }
 
 p {
@@ -8,8 +10,9 @@ p {
 }
 
 h1 {
-    font-family: 'Agbalumo';
+    font-family: 'Alibri', sans-serif;
     font-size: 36pt;
+    padding-top: 30px;
 }
 main, header, footer, nav ul {
     max-width: 40rem;
@@ -61,4 +64,45 @@ nav li {
 .Master {
     color: green;
     font-weight: bold;
+}
+.ingredients {
+       color: #ff5500;
+       font-weight: bold;
+}
+
+#burgarinformation {
+    background-color: black;
+    color: white;
+    border: 2px dashed #ff9900;
+
+}
+
+#kontakt {
+    border: 2px dashed red;
+    background-color:beige;
+
+}
+
+button:hover {
+    background-color: black;
+    color: green;
+
+}
+section {
+    margin-left: 20px;
+    padding-left: 20px;
+}
+button {
+    margin-left: 20px;
+}
+#burgarinformation * div {
+    margin-left: 100px;
+    padding: 5px;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
 }
