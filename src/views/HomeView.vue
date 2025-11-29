@@ -186,6 +186,7 @@ export default {
       allInfo: [],
       orderedBurgers: {},
       location: { x: 100, y: 100 },
+      currentOrderId: 0,
     };
   },
   methods: {
@@ -204,6 +205,7 @@ export default {
         orderId: this.getOrderNumber(),
         details: { x: this.location.x, y: this.location.y },
         orderItems: this.orderedBurgersToArray(),
+        custumerInfo: this.allInfo,
       });
       console.log("Order skickad");
     },
@@ -219,7 +221,8 @@ export default {
       console.log(this.orderedBurgers);
     },
     getOrderNumber: function () {
-      return Math.floor(Math.random() * 100000);
+      this.currentOrderId += 1;
+      return this.currentOrderId;
     },
     addOrder: function () {
       socket.emit("addOrder", {
