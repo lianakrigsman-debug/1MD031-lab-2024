@@ -1,21 +1,23 @@
-[{
-    "name": "Brandburgaren", 
-    "kCal": 500, 
-    "url": "/public/img/Brandburgare.jpg",
-    "lactose": false, 
-    "gluten": false
-},
-{
-    "name": "Donkenburgaren", 
-    "kCal": 10000, 
-    "url": "/public/img/donken.jpg",
-    "lactose": false, 
-    "gluten": false
-},
-{
-    "name": "Gurkburgaren", 
-    "kCal": 500, 
-    "url": "/public/img/gurkburgaren.jpg",
-    "lactose": false, 
-    "gluten": false
-}]
+[
+    {
+        "name": "Brandburgaren",
+        "kCal": 500,
+        "imgURL": "/public/img/Brandburgare.jpg",
+        "containsLactose": true,
+        "containsGluten": true
+    },
+    {
+        "name": "Donkenburgaren",
+        "kCal": 10000,
+        "imgURL": "/public/img/donken.jpg",
+        "containsLactose": false,
+        "containsGluten": true
+    },
+    {
+        "name": "Gurkburgaren",
+        "kCal": 500,
+        "imgURL": "/public/img/gurkburgaren.jpg",
+        "containsLactose": true,
+        "containsGluten": false
+    }
+]

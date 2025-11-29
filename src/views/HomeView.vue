@@ -13,7 +13,6 @@
         v-bind:key="burger.name"
         v-on:orderedBurger="addToOrder($event)"
       />
-      {{ orderedBurgers }}
     </div>
   </div>
   <div class="kontakt-karta">
@@ -267,6 +266,12 @@ h1 {
   font-size: 36pt;
   padding-top: 30px;
 }
+h2 {
+  text-align: center;
+}
+h3 {
+  text-align: center;
+}
 main,
 header,
 footer,
@@ -286,7 +291,7 @@ main {
 } */
 
 header {
-  background-image: url("../img/polacks.jpg");
+  background-image: url("../img/enCykelILund.jpg");
   background-size: cover;
   overflow: hidden;
   width: 100%;
@@ -330,6 +335,8 @@ nav li {
   background-color: magenta;
   color: white;
   border: 2px dashed #ff9900;
+  text-align: center;
+  padding-right: 80px;
 }
 
 #kontakt {

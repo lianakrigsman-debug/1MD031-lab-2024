@@ -2,14 +2,14 @@
   <div class="burger-card" id="burgarinformation">
     <h3>{{ burger.name }}</h3>
     <img
-      v-bind:src="burger.url"
+      v-bind:src="burger.imgURL"
       alt="Brandburgaren"
       style="width: 200px; height: 200px"
     />
     <ul class="ingredients">
-      <li>{{ burger.kCal }}</li>
-      <li>{{ burger.lactose }}</li>
-      <li>{{ burger.gluten }}</li>
+      <li>{{ burger.kCal }} kCal</li>
+      <li v-if="burger.containsLactose === true">Contains lactose</li>
+      <li v-if="burger.containsGluten === true">Contains gluten</li>
     </ul>
     <button v-on:click="decrease">-</button>
     <button v-on:click="increase">+</button>
@@ -52,6 +52,7 @@ export default {
 .ingredients {
   color: #ff5500;
   font-weight: bold;
+  text-align: left; /* Gör ingredient texten vänsterställd */
 }
 
 #burgarinformation {
