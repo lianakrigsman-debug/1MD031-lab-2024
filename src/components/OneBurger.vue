@@ -40,7 +40,7 @@ export default {
     decrease() {
       if (this.amountOrdered > 0) {
         this.amountOrdered--;
-      };
+      }
       this.$emit("orderedBurger", { name: this.burger.name, amount: this.amountOrdered });
     },
   },

@@ -47,6 +47,8 @@
           />
           {{ eMail }}
         </p>
+      </form>
+      <!--
         <p>
           <label for="gata">Gata:</label><br />
           <input
@@ -70,8 +72,7 @@
           />
           {{ streetNumber }}
         </p>
-      </form>
-
+      -->
       <form>
         <p>
           <label for="betalbetod">Betalmetod</label>
@@ -106,7 +107,7 @@
         </p>
       </form>
       {{ gender }}
-      <button v-on:click="allInfoClick" type="submit">
+      <button v-on:click="sendOrderToDispatch" type="submit">
         <img src="/public/img/cykel.jpg" style="width: 30px" />
         Skicka order
       </button>
@@ -114,10 +115,10 @@
     </div>
 
     <div id="karta">
-      <div id="map" v-on:click="addOrder">
-        <div
-          v-bind:style="{ left: this.location.x + 'px', top: this.location.y + 'px' }"
-        ></div>
+      <div id="map" v-on:click="setLocation">
+        <div v-bind:style="{ left: this.location.x + 'px', top: this.location.y + 'px' }">
+          T
+        </div>
 
         click here
 
@@ -176,8 +177,10 @@ export default {
       burgers: menu,
       name: "",
       eMail: "",
+      /*
       street: "",
       streetNumber: "",
+      */
       gender: "",
       rcp: "",
       allInfo: [],
@@ -186,15 +189,30 @@ export default {
     };
   },
   methods: {
-    allInfoClick: function () {
+    sendOrderToDispatch: function () {
       this.allInfo = [
         "Namn: " + this.name,
         "E-mail: " + this.eMail,
+        /*
         "Gata: " + this.street,
         "Gatnummer: " + this.streetNumber,
+        */
         "Kön: " + this.gender,
         "Betalmetod: " + this.rcp,
       ];
+      socket.emit("addOrder", {
+        orderId: this.getOrderNumber(),
+        details: { x: this.location.x, y: this.location.y },
+        orderItems: this.orderedBurgersToArray(),
+      });
+      console.log("Order skickad");
+    },
+    orderedBurgersToArray: function () {
+      let arr = [];
+      for (const [key, value] of Object.entries(this.orderedBurgers)) {
+        arr.push(key + " x" + value);
+      }
+      return arr;
     },
     addToOrder: function (event) {
       this.orderedBurgers[event.name] = event.amount;
@@ -203,16 +221,21 @@ export default {
     getOrderNumber: function () {
       return Math.floor(Math.random() * 100000);
     },
-    addOrder: function (event) {
+    addOrder: function () {
+      socket.emit("addOrder", {
+        orderId: this.getOrderNumber(),
+        details: { x: this.location.x, y: this.location.y },
+        orderItems: this.orderedBurgers,
+      });
+      console.log("Order skickad");
+    },
+    setLocation: function (event) {
       var offset = {
         x: event.currentTarget.getBoundingClientRect().left,
         y: event.currentTarget.getBoundingClientRect().top,
       };
-      socket.emit("addOrder", {
-        orderId: this.getOrderNumber(),
-        details: { x: event.clientX - 10 - offset.x, y: event.clientY - 10 - offset.y },
-        orderItems: ["Beans", "Curry"],
-      });
+      this.location.x = event.clientX - 10 - offset.x;
+      this.location.y = event.clientY - 10 - offset.y;
     },
   },
 };
